@@ -1,6 +1,6 @@
 {
   "name": "axios-token-controller",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "this package help you to manage access token and refresh token",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
