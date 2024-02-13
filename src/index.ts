@@ -109,7 +109,7 @@ interface Options {
 
 const refreshTokenMutexInstance = createMutex();
 
-function initialize(options: Options) {
+function tokenController(options: Options) {
   const refreshTokenMutex = async () => {
     return await refreshTokenMutexInstance(options.refreshToken);
   };
@@ -156,4 +156,4 @@ function initialize(options: Options) {
   return apiAxios;
 }
 
-export default initialize;
+export default tokenController;
