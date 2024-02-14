@@ -105,18 +105,25 @@ interface Options {
     | undefined
     | RefreshTokenReturn
     | Promise<RefreshTokenReturn>;
+  isBearerToken?: boolean;
+  requestTokenHeader?: string;
 }
 
 const refreshTokenMutexInstance = createMutex();
 
-function tokenController(options: Options) {
+function tokenController({
+  axiosInstance,
+  isBearerToken = true,
+  requestTokenHeader = "Authorization",
+  refreshToken,
+}: Options) {
   const refreshTokenMutex = async () => {
-    return await refreshTokenMutexInstance(options.refreshToken);
+    return await refreshTokenMutexInstance(refreshToken);
   };
-  const apiAxios: typeof options.axiosInstance = options.axiosInstance;
+  const apiAxios: any = axiosInstance;
   apiAxios.interceptors.request.use((request: any) => {
     const accessToken = tokens.accessToken;
-    request.headers["Authorization"] = `Bearer ${accessToken}`;
+    request.headers[requestTokenHeader] = `${isBearerToken ? "Bearer " : ""}${accessToken}`;
     return request;
   });
 
