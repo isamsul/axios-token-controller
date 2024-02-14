@@ -29,8 +29,6 @@ Using yarn:
 
 First create an instance of axios and pass it to tokenController with your other desired configuration as shown below.
 
-**note**: `instance` and `getCredentials` are the two required configuration settings, the other settings are all optional.
-
 ```ts
 import axios from 'axios';
 import tokenController, {getTokens} from "axios-token-controller";
@@ -78,7 +76,7 @@ export const authAxios: AxiosInstance = tokenController({
 ```
 ## Step 2
 
-Before you use the exported instance make sure you set the initial access token and refresh token as shown below
+**Note:** Before you use the exported instance make sure you set the initial access token and refresh token as shown below.
 
 ```ts
 import { setTokens } from "axios-token-controller";
