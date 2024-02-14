@@ -1,7 +1,7 @@
 {
   "name": "axios-token-controller",
   "version": "1.1.2",
-  "description": "this package help you to manage access token and refresh token",
+  "description": "This package helps you to manage access token and refresh token efficiently using mutex.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
