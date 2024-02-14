@@ -1,6 +1,6 @@
 {
   "name": "axios-token-controller",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "this package help you to manage access token and refresh token",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -20,7 +20,8 @@
     "refreshToken",
     "tokens",
     "javascript",
-    "interceptor"
+    "interceptor",
+    "mutex"
   ],
   "repository": {
     "type": "git",
